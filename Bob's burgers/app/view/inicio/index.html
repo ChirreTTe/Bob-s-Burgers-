@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inicio</title>
+
+    <!-- Icono de la pestaña -->
+    <link rel="icon" href="/Bob's burgers/assets/imagenes/Isotipo.png">
+
+    <!-- Hoja de estilos CSS -->
+    <link rel="stylesheet" href="/Bob's burgers/app/css/style.css">
+</head>
+
+<body>
+
+    <!-- Encabezado principal -->
+    <div class="headerPrincipal">
+
+        <!-- Primer letrero -->
+        <div class="direccionLetrero">
+            <div class="Letrero">
+                <h1>
+                    <img
+                        src="/Bob's burgers/assets/imagenes/Letrero.png"
+                        alt="Letrero"
+                    >
+                </h1>
+            </div>
+        </div>
+
+        <!-- Segundo letrero -->
+        <div class="direccionLetrero">
+            <div class="Letrero3">
+                <h1>
+                    <img
+                        src="/Bob's burgers/assets/imagenes/Letrero3.png"
+                        alt="Letrero3"
+                    >
+                </h1>
+            </div>
+        </div>
+
+        <!-- Perfil -->
+        <div class="perfil">
+            <a href="/">
+                <img
+                    src="/Bob's burgers/assets/imagenes/Perfil.png"
+                    alt="Perfil"
+                >
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Menú principal -->
+    <div>
+        <nav>
+            <ul>
+                <li>Opción 1</li>
+                <li>Opción 2</li>
+                <li>Opción 3</li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Portada con carrusel -->
+    <header>
+        <div class="carrusel">
+
+            <!-- Flecha anterior -->
+            <button
+                class="flecha anterior"
+                onclick="moverCarrusel(-1)"
+                aria-label="Imagen anterior"
+            >
+                &#10094;
+            </button>
+
+            <!-- Diapositivas -->
+            <div class="diapositivas" id="diapositivas">
+
+                <img
+                    src="/Bob's burgers/assets/imagenes/Portada.png"
+                    alt="Portada de Bob's Burgers"
+                >
+
+                <img
+                    src="/Bob's burgers/assets/imagenes/Portada 2.png"
+                    alt="Segunda portada de Bob's Burgers"
+                >
+
+                <img
+                    src="/Bob's burgers/assets/imagenes/Portada 3.png"
+                    alt="Tercera portada de Bob's Burgers"
+                >
+                <img src="/Bob's burgers/assets/imagenes/Portada5.png" alt="
+                Cuarta portada de Bob's Burgers">
+
+            </div>
+
+            <!-- Flecha siguiente -->
+            <button
+                class="flecha siguiente"
+                onclick="moverCarrusel(1)"
+                aria-label="Imagen siguiente"
+            >
+                &#10095;
+            </button>
+
+        </div>
+    </header>
+
+    <script>
+        let indice = 0;
+
+        function moverCarrusel(direccion) {
+            const diapositivas = document.getElementById("diapositivas");
+            const total = diapositivas.children.length;
+
+            indice = (indice + direccion + total) % total;
+
+            diapositivas.style.transform =
+                `translateX(-${indice * 100}%)`;
+        }
+    </script>
+
+    <!-- Aside -->
+    <aside>
+        <header>
+        </header>
+    </aside>
+
+</body>
+</html>
